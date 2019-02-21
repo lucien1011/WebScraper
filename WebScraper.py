@@ -4,7 +4,7 @@ from contextlib import closing
 from bs4 import BeautifulSoup
 
 class WebScraper(object):
-    def simple_get(url):
+    def simple_get(self,url):
         """
         Attempts to get the content at `url` by making an HTTP GET request.
         If the content-type of response is some kind of HTML/XML, return the
@@ -22,7 +22,7 @@ class WebScraper(object):
             return None
     
     
-    def is_good_response(resp):
+    def is_good_response(self,resp):
         """
         Returns True if the response seems to be HTML, False otherwise.
         """
@@ -32,7 +32,7 @@ class WebScraper(object):
                 and content_type.find('html') > -1)
     
     
-    def log_error(e):
+    def log_error(self,e):
         """
         It is always a good idea to log errors. 
         This function just prints them, but you can
